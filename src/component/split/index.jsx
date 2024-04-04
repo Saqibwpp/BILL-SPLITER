@@ -18,6 +18,7 @@ export const Billsplit = () => {
 
     const amount = parseFloat(data.amount);
     setTotalbill(amount);
+    console.log(totalbill);
 
     const perPersonBill = amount / peopleList.length;
     setBill(perPersonBill);
@@ -71,7 +72,7 @@ export const Billsplit = () => {
             {people.map((person, idx) => (
               <div key={idx}>
                 <li className="list-none font-custome text-xs font-medium justify-between p-2 items-center grid grid-cols-4 gap-4 w-full">
-                  {person.toUpperCase()}:<div>${bill}</div>
+                  {person.toUpperCase()}:<div>${totalbill}</div>
                   <div className="flex items-center border max-w-9 px-1">
                     <input
                       {...register(person)}
